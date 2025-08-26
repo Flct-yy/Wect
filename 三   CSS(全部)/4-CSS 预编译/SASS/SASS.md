@@ -37,9 +37,7 @@ vscode扩展
 * Live Server 实时刷新
 
 ---
-# 变量
-
-## SCSS 和 CSS 变量的区别
+# SCSS 变量和 CSS 变量的区别
 SCSS 和 CSS 变量的区别主要在于变量的定义方式。
 
     CSS 变量的定义方式是使用 `--` 作为变量名的前缀，例如 `--primary-color: #0077be;`。
@@ -619,7 +617,6 @@ has-key: map-has-key($colors, "primary"); // 检查键是否存在
 get-value: map-get($colors, "primary");   // 获取值
 keys: map-keys($colors);                  // 获取所有键
 ```
-
 ## 自定义函数
 
 ### 基本语法
@@ -629,10 +626,180 @@ keys: map-keys($colors);                  // 获取所有键
   @return $result;
 }
 ```
+- 函数名：可以包含字母、数字、下划线和连字符，但不能以数字开头
+- 参数：可以有多个，每个参数都可以指定默认值
+---
+# 混合宏
 
+在 SCSS 中，混合宏（Mixin）是一种强大的功能，允许你定义可重用的样式代码块。以下是关于 SCSS 混合宏的详细说明：
 
+## 基本语法
 
-## 函数与混合宏的区别
+### 定义混合宏
+```scss
+@mixin mixin-name {
+  // 样式规则
+  property: value;
+}
+```
+
+### 使用混合宏
+```scss
+.selector {
+  @include mixin-name;
+}
+```
+## 带参数的混合宏
+
+```scss
+// 定义带参数的混合宏
+@mixin button($bg-color, $text-color: white) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+// 使用混合宏
+.primary-btn {
+  @include button(blue);
+}
+
+.secondary-btn {
+  @include button(gray, black);
+}
+```
+## 默认参数值
+
+```scss
+@mixin box($width: 100px, $height: 100px, $bg: #f0f0f0) {
+  width: $width;
+  height: $height;
+  background-color: $bg;
+  margin: 10px;
+}
+
+.small-box {
+  @include box; // 使用所有默认值
+}
+
+.medium-box {
+  @include box(200px, 150px); // 只覆盖部分参数
+}
+
+.large-box {
+  @include box(300px, 200px, #e0e0e0); // 覆盖所有参数
+}
+```
+## 可变参数
+
+```scss
+// 使用 ... 表示可变参数
+@mixin shadow($shadows...) {
+  box-shadow: $shadows;
+}
+
+.element {
+  @include shadow(0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24));
+}
+```
+## 内容块 (@content)
+
+```scss
+@mixin responsive($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+.container {
+  width: 100%;
+  
+  @include responsive(768px) {
+    width: 750px;
+    margin: 0 auto;
+  }
+  
+  @include responsive(1200px) {
+    width: 1170px;
+  }
+}
+```
+## 实际应用示例
+
+### 1. Flexbox 布局混合宏
+```scss
+@mixin flex($justify: flex-start, $align: stretch, $direction: row, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+.header {
+  @include flex(space-between, center);
+}
+
+.centered {
+  @include flex(center, center, column);
+}
+```
+
+### 2. 文本截断混合宏
+```scss
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.long-text {
+  @include text-truncate;
+  max-width: 200px;
+}
+```
+
+### 3. 三角形生成器
+```scss
+@mixin triangle($direction: up, $size: 10px, $color: black) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  
+  @if $direction == up {
+    border-width: 0 $size $size $size;
+    border-color: transparent transparent $color transparent;
+  } @else if $direction == down {
+    border-width: $size $size 0 $size;
+    border-color: $color transparent transparent transparent;
+  } @else if $direction == left {
+    border-width: $size $size $size 0;
+    border-color: transparent $color transparent transparent;
+  } @else if $direction == right {
+    border-width: $size 0 $size $size;
+    border-color: transparent transparent transparent $color;
+  }
+}
+
+.arrow-up {
+  @include triangle(up, 15px, blue);
+}
+```
+## 最佳实践
+
+1. **命名要有意义**：使用描述性的名称
+2. **保持单一职责**：每个混合宏只做一件事
+3. **合理使用参数**：避免过多的参数
+4. **提供默认值**：让混合宏更灵活
+5. **使用 @content 谨慎**：只在真正需要动态内容时使用
+# 函数与混合宏的区别
 
 | 特性 | 函数 (Function) | 混合宏 (Mixin) |
 |------|-----------------|----------------|
@@ -640,3 +807,63 @@ keys: map-keys($colors);                  // 获取所有键
 | 用途 | 计算和转换值 | 生成重复的 CSS 代码 |
 | 调用方式 | `property: function();` | `@include mixin();` |
 | 输出 | 单个值 | CSS 声明块 |
+# extend 指令 和 %
+`@extend` 的作用是：  
+继承另一个选择器的所有样式，避免重复写相同的 CSS。
+
+用法很像“把已有样式复制过来”，但 SCSS 编译时会把选择器合并，而不是简单地复制。
+
+占位符选择器 `%`  
+如果只是用来继承的样式，不想真的生成一个 CSS 类，可以用 % 占位符。
+
+%message 不会被编译输出，专门用来做继承模板。
+```scss
+%message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend %message;
+  border-color: green;
+}
+
+.error {
+  @extend %message;
+  border-color: red;
+}
+```
+
+编译后：
+
+```css
+.success, .error {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+```
+
+---
+# 加减乘除运算符
+
+Sass 提供了一些运算符，可以对数字进行加减乘除运算(和 JavaScript 类似)。
+
+## 单位换算
+* SCSS 能够对 相同单位 的值直接运算。
+* 如果是 不同单位，结果会保留合理的单位，或者报错。
+* 如果需要跨单位，可以用 `calc()` (用于动态计算长度值)：
+## 除法 特殊规则
+在 SCSS 里 / 有两种含义：
+* 数学除法 → 如果能确定是运算，就会计算
+* 普通 CSS / 分隔符 → 如果不确定，就会保留
+* 建议写除法时用 括号 ( )，避免歧义。

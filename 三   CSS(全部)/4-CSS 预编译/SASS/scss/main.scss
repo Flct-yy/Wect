@@ -5,20 +5,63 @@
   @return map-get($font-weights, $weight-name);
 }
 
+// 混合flex布局
+@mixin flexCenter($direction){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+// 混合主题
+@mixin theme($light-theme:true) {
+  @if $light-theme {
+    background: lighten($primary-color, 100%);
+    color: darken($text-color, 100%);
+  } @else {
+    background: $primary-color;
+    color: $text-color;
+  }
+}
+
+// 混合媒体查询
+@mixin media($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+
 body {
   background: $primary-color;
   color: $text-color;
 }
 
 .main {
+  @include flexCenter(row);
   width: 80%;
   margin: 0 auto;
 
-  #{&}__paragraph {
+  #{&}__paragraph1 {
     font-weight: weight(bold);
 
     &:hover {
       color: pink;
     }
   }
+  #{&}__paragraph2 {
+    @extend .main__paragraph1;
+
+    &:hover {
+      color:$accent-color;
+    }
+  }
+
+  @include media(768px) {
+    flex-direction: column;
+  }
+}
+
+.light {
+  @include theme(true);
 }
