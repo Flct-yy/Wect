@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Cards 全示例</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { background: #f8f9fa; }
+    .section-title { margin-top: 3rem; margin-bottom: 1rem; }
+    .demo-grid { row-gap: 1.5rem; }
+    .overlay-helper { text-shadow: 0 1px 2px rgba(0,0,0,.4); }
+  </style>
+</head>
+<body>
+  <header class="py-4 bg-white border-bottom mb-4 sticky-top">
+    <div class="container">
+      <h1 class="h3 mb-0">Bootstrap Card 组件 · 全示例</h1>
+      <p class="text-secondary mb-0">覆盖常见结构、图片、列表、布局、尺寸、配色、交互与组合用法。</p>
+    </div>
+  </header>
+
+  <main class="container pb-5">
+    <!-- 1. 基础卡片 -->
+    <h2 id="basic" class="section-title">1) 基础卡片（最小结构）</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">基础卡片</h5>
+            <p class="card-text">最常见用法：仅包含 <code>.card-body</code>，放标题、文本与操作。</p>
+            <a href="#" class="btn btn-primary">操作按钮</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">标题 + 副标题</h5>
+            <h6 class="card-subtitle mb-2 text-muted">副标题文本</h6>
+            <p class="card-text">用于进一步说明内容，常搭配链接。</p>
+            <a href="#" class="card-link">详情</a>
+            <a href="#" class="card-link">更多</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h5 class="card-title">文本对齐</h5>
+            <p class="card-text">使用 <code>.text-center</code> / <code>.text-end</code> 控制内容对齐。</p>
+            <button class="btn btn-outline-secondary">了解更多</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 头部 / 底部 -->
+    <h2 id="header-footer" class="section-title">2) 头部 / 底部（Header / Footer）</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-header">卡片头部</div>
+          <div class="card-body">
+            <h5 class="card-title">含头部的卡片</h5>
+            <p class="card-text">头部常用于放标题、标签、筛选、导航等。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">含底部的卡片</h5>
+            <p class="card-text">底部通常显示次要信息或操作区。</p>
+          </div>
+          <div class="card-footer text-body-secondary">更新于 3 分钟前</div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center justify-content-between">
+            <span>带操作的头部</span>
+            <div class="btn-group btn-group-sm" role="group">
+              <button class="btn btn-outline-secondary">刷新</button>
+              <button class="btn btn-outline-secondary">导出</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-text mb-0">头部可容纳任意元素（按钮组、搜索框、筛选等）。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. 列表（List groups）-->
+    <h2 id="list" class="section-title">3) 列表内容（List group in Card）</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-header">待办</div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">设计首页</li>
+            <li class="list-group-item">编写接口文档</li>
+            <li class="list-group-item">联调测试</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">列表 + 主体</h5>
+            <p class="card-text">列表可位于卡片主体前后，形成分段信息。</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">特性 A</li>
+            <li class="list-group-item">特性 B</li>
+            <li class="list-group-item">特性 C</li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">查看文档</a>
+            <a href="#" class="card-link">提交反馈</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-center">消息 <span class="badge text-bg-primary rounded-pill">12</span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">通知 <span class="badge text-bg-success rounded-pill">7</span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">任务 <span class="badge text-bg-danger rounded-pill">3</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. 图片（顶部/底部/覆盖）-->
+    <h2 id="images" class="section-title">4) 图片：顶部 / 底部 / 覆盖</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos/600/360?random=11" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">图片顶部</h5>
+            <p class="card-text">常用于文章封面、商品图等。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">图片底部</h5>
+            <p class="card-text">当需要在正文后展示图片时使用。</p>
+          </div>
+          <img src="https://picsum.photos/600/360?random=12" class="card-img-bottom" alt="..." />
+        </div>
+      </div>
+      <div class="col">
+        <div class="card text-white h-100">
+          <img src="https://picsum.photos/600/360?random=13" class="card-img" alt="..." />
+          <div class="card-img-overlay d-flex flex-column justify-content-end">
+            <h5 class="card-title overlay-helper">图片覆盖（Overlay）</h5>
+            <p class="card-text overlay-helper">在图片之上叠加文字与操作。</p>
+            <button class="btn btn-light btn-sm align-self-start">立即查看</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. 水平卡片 / 媒体排版 -->
+    <h2 id="horizontal" class="section-title">5) 水平卡片（图文并排）</h2>
+    <div class="card mb-4">
+      <div class="row g-0 align-items-stretch">
+        <div class="col-md-4">
+          <img src="https://picsum.photos/800/600?random=21" class="img-fluid rounded-start h-100 object-fit-cover" alt="..." />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body h-100 d-flex flex-column">
+            <h5 class="card-title">水平卡片</h5>
+            <p class="card-text">通过 <code>.row.g-0</code> 与网格列组合，实现图片与内容的横向布局。</p>
+            <div class="mt-auto d-flex gap-2">
+              <a href="#" class="btn btn-primary">阅读</a>
+              <a href="#" class="btn btn-outline-secondary">收藏</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. 配色 / 边框 / 阴影 / 圆角 -->
+    <h2 id="styles" class="section-title">6) 配色、边框、阴影与圆角</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col">
+        <div class="card h-100 text-white bg-primary">
+          <div class="card-body">
+            <h5 class="card-title">背景主色</h5>
+            <p class="card-text"><code>.bg-primary .text-white</code></p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 border-success">
+          <div class="card-body">
+            <h5 class="card-title">自定义边框</h5>
+            <p class="card-text"><code>.border-success</code></p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow">
+          <div class="card-body">
+            <h5 class="card-title">阴影</h5>
+            <p class="card-text"><code>.shadow</code> / <code>.shadow-sm</code> / <code>.shadow-lg</code></p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 rounded-0">
+          <div class="card-body">
+            <h5 class="card-title">圆角控制</h5>
+            <p class="card-text"><code>.rounded</code> / <code>.rounded-0</code></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. 尺寸与等高 -->
+    <h2 id="sizing" class="section-title">7) 尺寸与等高排列</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">固定宽度</h5>
+            <p class="card-text">通过内联样式或工具类控制卡片宽度。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">等高卡片</h5>
+            <p class="card-text">使用 <code>.h-100</code> 让列中的卡片等高。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col d-grid">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">全宽显示</h5>
+            <p class="card-text">在栅格内默认占满列宽，配合 <code>.d-grid</code> 容器可拉伸操作区。</p>
+            <button class="btn btn-primary">主要操作</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. 卡片组（相邻等高）-->
+    <h2 id="groups" class="section-title">8) 卡片组（Card groups）</h2>
+    <div class="card-group mb-4">
+      <div class="card">
+        <img src="https://picsum.photos/600/360?random=31" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">卡片组 A</h5>
+          <p class="card-text">组内卡片等高且无间隙（相邻边框连接）。</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/600/360?random=32" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">卡片组 B</h5>
+          <p class="card-text">适合展示并列信息。</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/600/360?random=33" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">卡片组 C</h5>
+          <p class="card-text">注意在小屏下会垂直堆叠。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. 网格卡片（结合栅格）-->
+    <h2 id="grid" class="section-title">9) 网格卡片（Grid cards）</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 demo-grid">
+      <!-- 8 张示例卡片 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos/600/360?random=41" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h6 class="card-title">网格卡片 1</h6>
+            <p class="card-text">使用 <code>row-cols-*</code> 快速响应式排列。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos/600/360?random=42" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h6 class="card-title">网格卡片 2</h6>
+            <p class="card-text">配合 <code>.g-*</code> 控制列/行间距。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos/600/360?random=43" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h6 class="card-title">网格卡片 3</h6>
+            <p class="card-text">与容器/栅格系统完美协作。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos/600/360?random=44" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h6 class="card-title">网格卡片 4</h6>
+            <p class="card-text">移动端 1 列，桌面端多列。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos/600/360?random=45" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h6 class="card-title">网格卡片 5</h6>
+            <p class="card-text">图片 + 文本的标准信息卡。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos/600/360?random=46" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h6 class="card-title">网格卡片 6</h6>
+            <p class="card-text">通过 <code>.h-100</code> 保持等高效果。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos/600/360?random=47" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h6 class="card-title">网格卡片 7</h6>
+            <p class="card-text">可嵌入按钮、标签、徽章等。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos/600/360?random=48" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h6 class="card-title">网格卡片 8</h6>
+            <p class="card-text">作为列表/画廊/商品卡使用。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. 导航（Tabs/Pills） -->
+    <h2 id="nav" class="section-title">10) 卡片 + 导航（Tabs / Pills）</h2>
+    <div class="card mb-4">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabOne" type="button" role="tab">概览</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabTwo" type="button" role="tab">详情</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabThree" type="button" role="tab">设置</button>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body tab-content">
+        <div id="tabOne" class="tab-pane fade show active" role="tabpanel">
+          <h5 class="card-title">概览</h5>
+          <p class="card-text">卡片头部可与 Tabs/Pills 组合，切换展示不同内容。</p>
+        </div>
+        <div id="tabTwo" class="tab-pane fade" role="tabpanel">
+          <h5 class="card-title">详情</h5>
+          <p class="card-text">第二个面板内容区域。</p>
+        </div>
+        <div id="tabThree" class="tab-pane fade" role="tabpanel">
+          <h5 class="card-title">设置</h5>
+          <p class="card-text">第三个面板内容区域。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. 折叠（Collapse）与手风琴（Accordion）-->
+    <h2 id="collapse" class="section-title">11) 卡片 + 折叠（Collapse / Accordion）</h2>
+    <div class="card mb-4">
+      <div class="card-header">
+        <button class="btn btn-sm btn-primary" data-bs-toggle="collapse" data-bs-target="#demoCollapse">展开/收起</button>
+      </div>
+      <div id="demoCollapse" class="collapse show">
+        <div class="card-body">
+          <p class="mb-0">可将大段内容放入折叠区域，保持页面整洁。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion mb-4" id="demoAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">手风琴面板 1</button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#demoAccordion">
+          <div class="accordion-body">
+            手风琴是折叠的组合形式，虽然不属于 Card，但在信息结构上常与卡片一起使用。
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">手风琴面板 2</button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#demoAccordion">
+          <div class="accordion-body">内容区域 2</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12. 组合元素（徽章、按钮组、进度条等）-->
+    <h2 id="combo" class="section-title">12) 组合元素：徽章 / 按钮组 / 进度条</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body d-flex align-items-start justify-content-between">
+            <div>
+              <h5 class="card-title">带徽章</h5>
+              <p class="card-text">可在标题处放置状态徽章。</p>
+            </div>
+            <span class="badge text-bg-warning">Beta</span>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">按钮组</h5>
+            <div class="btn-group" role="group">
+              <button class="btn btn-outline-primary">左</button>
+              <button class="btn btn-outline-primary">中</button>
+              <button class="btn btn-outline-primary">右</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">进度条</h5>
+            <p class="card-text">在卡片内嵌入其他组件。</p>
+            <div class="progress" role="progressbar" aria-label="示例进度" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar" style="width: 64%">64%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13. 布局技巧（对齐/间距/Flex）-->
+    <h2 id="tips" class="section-title">13) 布局技巧：对齐 / 间距 / Flex</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100 d-flex">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">底部对齐</h5>
+            <p class="card-text">使用 <code>.mt-auto</code> 将操作区推到底部。</p>
+            <div class="mt-auto">
+              <button class="btn btn-primary">提交</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">间距工具</h5>
+            <p class="card-text">通过 <code>.p-*</code> / <code>.m-*</code> / <code>.g-*</code> 控制内外边距与网格间距。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-end">
+          <div class="card-body">
+            <h5 class="card-title">右对齐</h5>
+            <p class="card-text">在卡片上设置整体文本对齐方式。</p>
+            <a href="#" class="btn btn-outline-secondary">动作</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14. 语义状态卡片（成功/警告/危险）-->
+    <h2 id="states" class="section-title">14) 语义状态卡片</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card border-success">
+          <div class="card-body">
+            <h5 class="card-title text-success">成功</h5>
+            <p class="card-text">表示成功/可用状态。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card border-warning">
+          <div class="card-body">
+            <h5 class="card-title text-warning">警告</h5>
+            <p class="card-text">表示潜在风险，需要注意。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card border-danger">
+          <div class="card-body">
+            <h5 class="card-title text-danger">危险</h5>
+            <p class="card-text">表示错误或危险状态。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15. 卡片中的表单 -->
+    <h2 id="forms" class="section-title">15) 卡片中的表单（登录/注册等）</h2>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title mb-3">示例：登录表单</h5>
+            <div class="vstack gap-3">
+              <div>
+                <label class="form-label">邮箱</label>
+                <input type="email" class="form-control" placeholder="name@example.com" />
+              </div>
+              <div>
+                <label class="form-label">密码</label>
+                <input type="password" class="form-control" placeholder="••••••••" />
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="remember" />
+                  <label class="form-check-label" for="remember">记住我</label>
+                </div>
+                <a href="#" class="link-secondary">忘记密码？</a>
+              </div>
+              <button class="btn btn-primary">登录</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-5" />
+    <p class="text-center text-muted">以上示例基于 Bootstrap 5.3.x。可按需裁剪或组合到你的项目中。</p>
+  </main>
+
+  <!-- Bootstrap 5 JS Bundle (含 Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Typography Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 20px;
+            padding-bottom: 40px;
+        }
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #6f42c1 0%, #d63384 100%);
+            color: white;
+            padding: 30px 0;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .code-example {
+            background-color: #2d2d2d;
+            color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: monospace;
+        }
+        .bootstrap-badge {
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
+        .example-box {
+            border-left: 4px solid #6f42c1;
+            padding: 15px;
+            background-color: #f8f9fa;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 页头 -->
+        <div class="header text-center mb-5">
+            <h1 class="display-3 fw-bold">Bootstrap 排版系统</h1>
+            <p class="lead mb-0">探索Bootstrap强大的文本样式与排版功能</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <!-- 标题部分 -->
+                <div class="section">
+                    <h2><span class="badge bg-primary bootstrap-badge">标题</span></h2>
+                    <p>Bootstrap为所有HTML标题提供了样式：<code>&lt;h1&gt;</code> 到 <code>&lt;h6&gt;</code></p>
+                    
+                    <div class="example-box">
+                        <h1>h1. Bootstrap 标题</h1>
+                        <h2>h2. Bootstrap 标题</h2>
+                        <h3>h3. Bootstrap 标题</h3>
+                        <h4>h4. Bootstrap 标题</h4>
+                        <h5>h5. Bootstrap 标题</h5>
+                        <h6>h6. Bootstrap 标题</h6>
+                    </div>
+
+                    <div class="code-example">
+                        &lt;h1&gt;h1. Bootstrap 标题&lt;/h1&gt;<br>
+                        &lt;h2&gt;h2. Bootstrap 标题&lt;/h2&gt;<br>
+                        &lt;h3&gt;h3. Bootstrap 标题&lt;/h3&gt;<br>
+                        &lt;h4&gt;h4. Bootstrap 标题&lt;/h4&gt;<br>
+                        &lt;h5&gt;h5. Bootstrap 标题&lt;/h5&gt;<br>
+                        &lt;h6&gt;h6. Bootstrap 标题&lt;/h6&gt;
+                    </div>
+                </div>
+
+                <!-- 显示标题 -->
+                <div class="section">
+                    <h2><span class="badge bg-success bootstrap-badge">显示标题</span></h2>
+                    <p>当需要更突出的标题时，可以使用Display类</p>
+                    
+                    <div class="example-box">
+                        <h1 class="display-1">Display 1</h1>
+                        <h1 class="display-2">Display 2</h1>
+                        <h1 class="display-3">Display 3</h1>
+                        <h1 class="display-4">Display 4</h1>
+                        <h1 class="display-5">Display 5</h1>
+                        <h1 class="display-6">Display 6</h1>
+                    </div>
+
+                    <div class="code-example">
+                        &lt;h1 class="display-1"&gt;Display 1&lt;/h1&gt;<br>
+                        &lt;h1 class="display-2"&gt;Display 2&lt;/h1&gt;<br>
+                        &lt;h1 class="display-3"&gt;Display 3&lt;/h1&gt;<br>
+                        &lt;h1 class="display-4"&gt;Display 4&lt;/h1&gt;<br>
+                        &lt;h1 class="display-5"&gt;Display 5&lt;/h1&gt;<br>
+                        &lt;h1 class="display-6"&gt;Display 6&lt;/h1&gt;
+                    </div>
+                </div>
+
+                <!-- 引导段落 -->
+                <div class="section">
+                    <h2><span class="badge bg-info bootstrap-badge">引导段落</span></h2>
+                    <p>使用<code>.lead</code>类使段落突出显示</p>
+                    
+                    <div class="example-box">
+                        <p class="lead">
+                            这是一个引导段落。它比普通段落更突出，通常用于文章的开头或重要内容提示，吸引读者的注意力。
+                        </p>
+                        <p>这是一个普通段落，用于对比引导段落的效果。普通段落通常用于正文内容，样式相对简洁。</p>
+                    </div>
+
+                    <div class="code-example">
+                        &lt;p class="lead"&gt;<br>
+                        &nbsp;&nbsp;这是一个引导段落。它比普通段落更突出...<br>
+                        &lt;/p&gt;<br>
+                        &lt;p&gt;这是一个普通段落...&lt;/p&gt;
+                    </div>
+                </div>
+
+                <!-- 内联文本元素 -->
+                <div class="section">
+                    <h2><span class="badge bg-warning bootstrap-badge">内联文本元素</span></h2>
+                    <p>Bootstrap为常见内联HTML标签提供样式</p>
+                    
+                    <div class="example-box">
+                        <p>你可以使用<mark>高亮标记</mark>来突出文本</p>
+                        <p><del>被删除的文本</del>表示不再相关的内容</p>
+                        <p><s>无用文本</s>表示不再准确的内容</p>
+                        <p><ins>插入的文本</ins>表示添加到文档的内容</p>
+                        <p><u>下划线文本</u>作为一种替代样式</p>
+                        <p><small>小号文本</small>用于免责声明和细则</p>
+                        <p><strong>粗体文本</strong>用于表示重要内容</p>
+                        <p><em>斜体文本</em>用于强调或语气变化</p>
+                    </div>
+
+                    <div class="code-example">
+                        &lt;p&gt;你可以使用&lt;mark&gt;高亮标记&lt;/mark&gt;来突出文本&lt;/p&gt;<br>
+                        &lt;p&gt;&lt;del&gt;被删除的文本&lt;/del&gt;表示不再相关的内容&lt;/p&gt;<br>
+                        &lt;p&gt;&lt;s&gt;无用文本&lt;/s&gt;表示不再准确的内容&lt;/p&gt;<br>
+                        &lt;p&gt;&lt;ins&gt;插入的文本&lt;/ins&gt;表示添加到文档的内容&lt;/p&gt;<br>
+                        &lt;p&gt;&lt;u&gt;下划线文本&lt;/u&gt;作为一种替代样式&lt;/p&gt;<br>
+                        &lt;p&gt;&lt;small&gt;小号文本&lt;/small&gt;用于免责声明和细则&lt;/p&gt;<br>
+                        &lt;p&gt;&lt;strong&gt;粗体文本&lt;/strong&gt;用于表示重要内容&lt;/p&gt;<br>
+                        &lt;p&gt;&lt;em&gt;斜体文本&lt;/em&gt;用于强调或语气变化&lt;/p&gt;
+                    </div>
+                </div>
+
+                <!-- 文本工具类 -->
+                <div class="section">
+                    <h2><span class="badge bg-danger bootstrap-badge">文本工具类</span></h2>
+                    <p>Bootstrap提供了丰富的文本工具类</p>
+                    
+                    <div class="example-box">
+                        <p class="text-start">左对齐文本（默认）</p>
+                        <p class="text-center">居中文本</p>
+                        <p class="text-end">右对齐文本</p>
+                        
+                        <p class="fw-bold">加粗文字</p>
+                        <p class="fw-normal">正常文字</p>
+                        <p class="fw-light">细体文字</p>
+                        <p class="fst-italic">斜体文字</p>
+                        
+                        <p class="text-primary">主要文本</p>
+                        <p class="text-success">成功文本</p>
+                        <p class="text-danger">危险文本</p>
+                        <p class="text-warning">警告文本</p>
+                        <p class="text-info">信息文本</p>
+                        <p class="text-muted">减弱文本</p>
+                    </div>
+
+                    <div class="code-example">
+                        &lt;p class="text-start"&gt;左对齐文本（默认）&lt;/p&gt;<br>
+                        &lt;p class="text-center"&gt;居中文本&lt;/p&gt;<br>
+                        &lt;p class="text-end"&gt;右对齐文本&lt;/p&gt;<br><br>
+                        
+                        &lt;p class="fw-bold"&gt;加粗文字&lt;/p&gt;<br>
+                        &lt;p class="fw-normal"&gt;正常文字&lt;/p&gt;<br>
+                        &lt;p class="fw-light"&gt;细体文字&lt;/p&gt;<br>
+                        &lt;p class="fst-italic"&gt;斜体文字&lt;/p&gt;<br><br>
+                        
+                        &lt;p class="text-primary"&gt;主要文本&lt;/p&gt;<br>
+                        &lt;p class="text-success"&gt;成功文本&lt;/p&gt;<br>
+                        &lt;p class="text-danger"&gt;危险文本&lt;/p&gt;<br>
+                        &lt;p class="text-warning"&gt;警告文本&lt;/p&gt;<br>
+                        &lt;p class="text-info"&gt;信息文本&lt;/p&gt;<br>
+                        &lt;p class="text-muted"&gt;减弱文本&lt;/p&gt;
+                    </div>
+                </div>
+
+                <!-- 引用 -->
+                <div class="section">
+                    <h2><span class="badge bg-dark bootstrap-badge">引用</span></h2>
+                    <p>使用<code>blockquote</code>元素呈现引用内容</p>
+                    
+                    <div class="example-box">
+                        <figure>
+                            <blockquote class="blockquote">
+                                <p>设计不仅仅是外观和感觉，设计是如何运作。</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                                Steve Jobs <cite title="来源标题">苹果公司联合创始人</cite>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="code-example">
+                        &lt;figure&gt;<br>
+                        &nbsp;&nbsp;&lt;blockquote class="blockquote"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;设计不仅仅是外观和感觉，设计是如何运作。&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&lt;/blockquote&gt;<br>
+                        &nbsp;&nbsp;&lt;figcaption class="blockquote-footer"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Steve Jobs &lt;cite title="来源标题"&gt;苹果公司联合创始人&lt;/cite&gt;<br>
+                        &nbsp;&nbsp;&lt;/figcaption&gt;<br>
+                        &lt;/figure&gt;
+                    </div>
+                </div>
+
+                <!-- 列表 -->
+                <div class="section">
+                    <h2><span class="badge bg-secondary bootstrap-badge">列表</span></h2>
+                    <p>Bootstrap提供了多种列表样式</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>无序列表</h5>
+                            <ul>
+                                <li>列表项一</li>
+                                <li>列表项二</li>
+                                <li>列表项三
+                                    <ul>
+                                        <li>嵌套项一</li>
+                                        <li>嵌套项二</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>有序列表</h5>
+                            <ol>
+                                <li>列表项一</li>
+                                <li>列表项二</li>
+                                <li>列表项三
+                                    <ol>
+                                        <li>嵌套项一</li>
+                                        <li>嵌套项二</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4">无样式列表</h5>
+                    <ul class="list-unstyled">
+                        <li>没有项目符号的列表</li>
+                        <li>看起来更简洁</li>
+                        <li>适合导航菜单等场景</li>
+                    </ul>
+
+                    <h5 class="mt-4">内联列表</h5>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">首页</li>
+                        <li class="list-inline-item">产品</li>
+                        <li class="list-inline-item">服务</li>
+                        <li class="list-inline-item">关于我们</li>
+                        <li class="list-inline-item">联系我们</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center mt-5 text-muted">
+            <p>Bootstrap排版示例 &copy; 2023 - 展示Bootstrap强大的排版功能</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

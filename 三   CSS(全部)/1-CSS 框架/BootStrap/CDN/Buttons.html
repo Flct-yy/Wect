@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Buttons Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        .card {
+            transition: transform 0.2s;
+            margin-bottom: 20px;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .btn-example {
+            margin: 5px;
+            min-width: 120px;
+        }
+        .theme-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .code-container {
+            display: none;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 15px;
+            font-family: monospace;
+        }
+        .section-title {
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 10px;
+            margin: 40px 0 20px;
+        }
+        .bg-gradient-light {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .bg-gradient-dark {
+            background: linear-gradient(135deg, #2b3035 0%, #212529 100%);
+        }
+    </style>
+</head>
+<body class="bg-gradient-light">
+    <div class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-primary">Bootstrap 按钮样式展示</h1>
+            <p class="lead">探索Bootstrap提供的各种按钮样式、尺寸和状态</p>
+            <div class="d-flex justify-content-center">
+                <div class="btn-group mt-3">
+                    <a href="#basic-buttons" class="btn btn-outline-primary">基础按钮</a>
+                    <a href="#outline-buttons" class="btn btn-outline-primary">轮廓按钮</a>
+                    <a href="#sizes" class="btn btn-outline-primary">按钮尺寸</a>
+                    <a href="#states" class="btn btn-outline-primary">按钮状态</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- 基础按钮 -->
+        <section id="basic-buttons" class="mb-5">
+            <h2 class="section-title">基础按钮样式</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">标准颜色</h5>
+                        </div>
+                        <div class="card-body">
+                            <button class="btn btn-primary btn-example">Primary</button>
+                            <button class="btn btn-secondary btn-example">Secondary</button>
+                            <button class="btn btn-success btn-example">Success</button>
+                            <button class="btn btn-danger btn-example">Danger</button>
+                            <button class="btn btn-warning btn-example">Warning</button>
+                            <button class="btn btn-info btn-example">Info</button>
+                            <button class="btn btn-light btn-example">Light</button>
+                            <button class="btn btn-dark btn-example">Dark</button>
+                            <button class="btn btn-link btn-example">Link</button>
+                            
+                            <button class="btn btn-outline-primary mt-3" onclick="toggleCode('basic-code')">
+                                <i class="bi bi-code"></i> 查看代码
+                            </button>
+                            <div id="basic-code" class="code-container">
+                                <pre><code>&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="btn btn-warning"&gt;Warning&lt;/button&gt;
+&lt;button class="btn btn-info"&gt;Info&lt;/button&gt;
+&lt;button class="btn btn-light"&gt;Light&lt;/button&gt;
+&lt;button class="btn btn-dark"&gt;Dark&lt;/button&gt;
+&lt;button class="btn btn-link"&gt;Link&lt;/button&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">带图标的按钮</h5>
+                        </div>
+                        <div class="card-body">
+                            <button class="btn btn-primary btn-example">
+                                <i class="bi bi-star-fill me-2"></i> Primary
+                            </button>
+                            <button class="btn btn-success btn-example">
+                                <i class="bi bi-check-circle me-2"></i> Success
+                            </button>
+                            <button class="btn btn-danger btn-example">
+                                <i class="bi bi-trash me-2"></i> Danger
+                            </button>
+                            <button class="btn btn-info btn-example">
+                                <i class="bi bi-info-circle me-2"></i> Info
+                            </button>
+                            <button class="btn btn-warning btn-example">
+                                <i class="bi bi-exclamation-triangle me-2"></i> Warning
+                            </button>
+                            
+                            <button class="btn btn-outline-primary mt-3" onclick="toggleCode('icon-code')">
+                                <i class="bi bi-code"></i> 查看代码
+                            </button>
+                            <div id="icon-code" class="code-container">
+                                <pre><code>&lt;button class="btn btn-primary"&gt;
+    &lt;i class="bi bi-star-fill me-2"&gt;&lt;/i&gt; Primary
+&lt;/button&gt;
+
+&lt;button class="btn btn-success"&gt;
+    &lt;i class="bi bi-check-circle me-2"&gt;&lt;/i&gt; Success
+&lt;/button&gt;
+
+&lt;button class="btn btn-danger"&gt;
+    &lt;i class="bi bi-trash me-2"&gt;&lt;/i&gt; Danger
+&lt;/button&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 轮廓按钮 -->
+        <section id="outline-buttons" class="mb-5">
+            <h2 class="section-title">轮廓按钮</h2>
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">轮廓按钮样式</h5>
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-outline-primary btn-example">Primary</button>
+                    <button class="btn btn-outline-secondary btn-example">Secondary</button>
+                    <button class="btn btn-outline-success btn-example">Success</button>
+                    <button class="btn btn-outline-danger btn-example">Danger</button>
+                    <button class="btn btn-outline-warning btn-example">Warning</button>
+                    <button class="btn btn-outline-info btn-example">Info</button>
+                    <button class="btn btn-outline-light btn-example">Light</button>
+                    <button class="btn btn-outline-dark btn-example">Dark</button>
+                    
+                    <button class="btn btn-outline-primary mt-3" onclick="toggleCode('outline-code')">
+                        <i class="bi bi-code"></i> 查看代码
+                    </button>
+                    <div id="outline-code" class="code-container">
+                        <pre><code>&lt;button class="btn btn-outline-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-outline-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="btn btn-outline-success"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-outline-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="btn btn-outline-warning"&gt;Warning&lt;/button&gt;
+&lt;button class="btn btn-outline-info"&gt;Info&lt;/button&gt;
+&lt;button class="btn btn-outline-light"&gt;Light&lt;/button&gt;
+&lt;button class="btn btn-outline-dark"&gt;Dark&lt;/button&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 按钮尺寸 -->
+        <section id="sizes" class="mb-5">
+            <h2 class="section-title">按钮尺寸</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">不同尺寸的按钮</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-start">
+                                <button class="btn btn-primary btn-lg mb-2">大号按钮 (.btn-lg)</button>
+                                <button class="btn btn-primary mb-2">默认按钮</button>
+                                <button class="btn btn-primary btn-sm">小号按钮 (.btn-sm)</button>
+                            </div>
+                            
+                            <button class="btn btn-outline-primary mt-3" onclick="toggleCode('size-code')">
+                                <i class="bi bi-code"></i> 查看代码
+                            </button>
+                            <div id="size-code" class="code-container">
+                                <pre><code>&lt;button class="btn btn-primary btn-lg"&gt;大号按钮&lt;/button&gt;
+&lt;button class="btn btn-primary"&gt;默认按钮&lt;/button&gt;
+&lt;button class="btn btn-primary btn-sm"&gt;小号按钮&lt;/button&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">块级按钮</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary btn-block">块级按钮 (.d-grid)</button>
+                                <button class="btn btn-secondary btn-block">另一个块级按钮</button>
+                            </div>
+                            
+                            <button class="btn btn-outline-primary mt-3" onclick="toggleCode('block-code')">
+                                <i class="bi bi-code"></i> 查看代码
+                            </button>
+                            <div id="block-code" class="code-container">
+                                <pre><code>&lt;div class="d-grid gap-2"&gt;
+    &lt;button class="btn btn-primary btn-block"&gt;块级按钮&lt;/button&gt;
+    &lt;button class="btn btn-secondary btn-block"&gt;另一个块级按钮&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 按钮状态 -->
+        <section id="states" class="mb-5">
+            <h2 class="section-title">按钮状态</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">活动与禁用状态</h5>
+                        </div>
+                        <div class="card-body">
+                            <button class="btn btn-primary active btn-example">活动状态</button>
+                            <button class="btn btn-primary disabled btn-example">禁用状态</button>
+                            <button class="btn btn-outline-primary active btn-example">轮廓活动状态</button>
+                            <button class="btn btn-outline-primary disabled btn-example">轮廓禁用状态</button>
+                            
+                            <button class="btn btn-outline-primary mt-3" onclick="toggleCode('state-code')">
+                                <i class="bi bi-code"></i> 查看代码
+                            </button>
+                            <div id="state-code" class="code-container">
+                                <pre><code>&lt;button class="btn btn-primary active"&gt;活动状态&lt;/button&gt;
+&lt;button class="btn btn-primary disabled"&gt;禁用状态&lt;/button&gt;
+&lt;button class="btn btn-outline-primary active"&gt;轮廓活动状态&lt;/button&gt;
+&lt;button class="btn btn-outline-primary disabled"&gt;轮廓禁用状态&lt;/button&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">按钮组</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="btn-group mb-3" role="group">
+                                <button type="button" class="btn btn-primary">左侧</button>
+                                <button type="button" class="btn btn-primary">中间</button>
+                                <button type="button" class="btn btn-primary">右侧</button>
+                            </div>
+                            
+                            <div class="btn-group mb-3" role="group">
+                                <button type="button" class="btn btn-outline-primary">左侧</button>
+                                <button type="button" class="btn btn-outline-primary">中间</button>
+                                <button type="button" class="btn btn-outline-primary">右侧</button>
+                            </div>
+                            
+                            <button class="btn btn-outline-primary mt-3" onclick="toggleCode('group-code')">
+                                <i class="bi bi-code"></i> 查看代码
+                            </button>
+                            <div id="group-code" class="code-container">
+                                <pre><code>&lt;div class="btn-group" role="group"&gt;
+    &lt;button type="button" class="btn btn-primary"&gt;左侧&lt;/button&gt;
+    &lt;button type="button" class="btn btn-primary"&gt;中间&lt;/button&gt;
+    &lt;button type="button" class="btn btn-primary"&gt;右侧&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class="btn-group" role="group"&gt;
+    &lt;button type="button" class="btn btn-outline-primary"&gt;左侧&lt;/button&gt;
+    &lt;button type="button" class="btn btn-outline-primary"&gt;中间&lt;/button&gt;
+    &lt;button type="button" class="btn btn-outline-primary"&gt;右侧&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 主题切换按钮 -->
+    <div class="theme-switcher">
+        <button class="btn btn-primary btn-lg rounded-circle" id="theme-toggle">
+            <i class="bi bi-moon-fill"></i>
+        </button>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">Bootstrap 按钮样式展示 &copy; 2023</p>
+            <p class="mb-0">使用 Bootstrap 5.3 构建</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 切换代码显示
+        function toggleCode(id) {
+            const codeContainer = document.getElementById(id);
+            codeContainer.style.display = codeContainer.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        // 主题切换功能
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('bg-gradient-light')) {
+                body.classList.remove('bg-gradient-light');
+                body.classList.add('bg-gradient-dark', 'text-light');
+                themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+            } else {
+                body.classList.remove('bg-gradient-dark', 'text-light');
+                body.classList.add('bg-gradient-light');
+                themeToggle.innerHTML = '<i class="bi bi-moon-fill"></i>';
+            }
+        });
+        
+        // 初始化代码容器为隐藏状态
+        document.querySelectorAll('.code-container').forEach(container => {
+            container.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
